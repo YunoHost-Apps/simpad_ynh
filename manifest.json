@@ -1,14 +1,14 @@
 {
-    "name": "shuri",
-    "id": "shuri",
+    "name": "simpad",
+    "id": "simpad",
     "packaging_format": 1,
     "requirements": {
         "yunohost": ">> 2.3.15"
     },
     "description": {
-        "fr": "Racourcisseur d'URL"
+        "fr": "Simple MarkDown Editor"
     },
-    "url": "https://github.com/pips-/shuri",
+    "url": "https://github.com/beli3ver/SiMPad",
     "license": "MIT",
     "maintainer": {
         "name": "frju365",
@@ -25,8 +25,8 @@
                 "name": "domain",
                 "type": "domain",
                 "ask": {
-                    "en": "Choose a domain for shuri",
-                    "fr": "Choisissez un domaine pour shuri"
+                    "en": "Choose a domain for simpad",
+                    "fr": "Choisissez un domaine pour simpad"
                 },
                 "example": "domain.org"
             },
@@ -34,8 +34,8 @@
                 "name": "path",
                 "type": "path",
                 "ask": {
-                    "en": "Choose a path for shuri",
-                    "fr": "Choisissez un chemin pour shuri"
+                    "en": "Choose a path for simpad",
+                    "fr": "Choisissez un chemin pour simpad"
                 },
                 "example": "/shuri",
                 "default": "/shuri"
@@ -43,7 +43,7 @@
             {
                 "name": "is_public",
                 "ask": {
-                    "en": "Is it a public shuri site ?",
+                    "en": "Is it a public simpad site ?",
                     "fr": "Est-ce un site public ?"
                 },
                 "choices": ["Yes", "No"],
