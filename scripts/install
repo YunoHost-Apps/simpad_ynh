@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Source app helpers
+source /usr/share/yunohost/helpers
 source .fonctions
 set -eu
 
@@ -7,12 +9,7 @@ set -eu
 domain=$YNH_APP_ARG_DOMAIN
 path=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
-
 app=$YNH_APP_INSTANCE_NAME
-
-# Source app helpers
-source /usr/share/yunohost/helpers
-
 script_dir=$PWD
 
 # Vérifie que les variables ne sont pas vides.
@@ -24,8 +21,8 @@ CHECK_DOMAINPATH	# Vérifie la disponibilité du path et du domaine.
 
 CHECK_FINALPATH	# Vérifie que le dossier de destination n'est pas déjà utilisé.
 
-# Source YunoHost helpers
-source /usr/share/yunohost/helpers
+# Config of the app
+sed -i "s@__URL__@$domain$path@g" ../conf/config.php
 
 # Copy files to the right place
 final_path=/var/www/$app
