@@ -28,7 +28,6 @@ sed -i "s@__URL__@$domain$path@g" ../conf/config.php
 final_path=/var/www/$app
 sudo git clone https://github.com/beli3ver/SiMPad.git $final_path
 sudo mv ../conf/config.php $final_path/config/config.php
-popd
 
 # Files owned by root, www-data can just read
 sudo chown www-data:www-data $final_path -R
