@@ -24,7 +24,6 @@ script_dir=$PWD
 CHECK_VAR "$app" "app name not set"
 CHECK_VAR "$script_dir" "script_dir not set"
 
-CHECK_PATH	# Vérifie et corrige la syntaxe du path.
 CHECK_DOMAINPATH	# Vérifie la disponibilité du path et du domaine.
 
 CHECK_FINALPATH	# Vérifie que le dossier de destination n'est pas déjà utilisé.
