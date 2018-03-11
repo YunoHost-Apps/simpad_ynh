@@ -2,6 +2,7 @@
     "name": "simpad",
     "id": "simpad",
     "packaging_format": 1,
+    "version": "1.0",
     "requirements": {
         "yunohost": ">> 2.3.15"
     },
