@@ -10,13 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# MANAGE SCRIPT FAILURE
-#=================================================
-
-# Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
-
-#=================================================
 # LOAD SETTINGS
 #=================================================
 
@@ -39,6 +32,18 @@ elif [ "$is_public" = "No" ]; then
 	is_public=0
 fi
 
+#=================================================
+# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
+#=================================================
+
+# Backup the current version of the app
+ynh_backup_before_upgrade
+ynh_clean_setup () {
+	# restore it if the upgrade fails
+	ynh_restore_upgradebackup
+}
+# Exit if an error occurs during the execution of the script
+ynh_abort_if_errors
 
 #=================================================
 # CHECK THE PATH
@@ -72,7 +77,6 @@ ynh_add_nginx_config
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
-
 
 # Files owned by root, www-data can just read
 sudo chown www-data:www-data $final_path -R
